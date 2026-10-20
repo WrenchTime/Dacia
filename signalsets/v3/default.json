@@ -347,8 +347,9 @@
   ]},
 { "hdr": "743", "rax": "763", "din": "C0", "dbg": true, "cmd": {"22": "0207"}, "freq": 30,
   "signals": [
-    {"id": "DACIA_ODO_KM", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer in km"},
-    {"id": "DACIA_ODO_V2", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer",       "suggestedMetric": "odometer"}
+    {"id": "DACIA_ODO_KM",  "path": "Trips", "fmt": { "len": 24, "max": 16777215,                                "unit": "kilometers" },                   "name": "Odometer in km"},
+    {"id": "DACIA_ODO_V2",  "path": "Trips", "fmt": { "len": 24, "blsb": true,    "max": 16777215, "nullmin": 0,                      "unit": "kilometers" },                        "name": "Odometer",            "suggestedMetric": "odometer"},
+    {"id": "DACIA_ODO_CLU", "path": "Trips", "fmt": { "len": 24, "max": 16777215,                                "unit": "kilometers" },                   "name": "Odometer",       "suggestedMetric": "odometer"}
   ]},
 { "hdr": "743", "rax": "763", "dbg": true, "cmd": {"22": "020B"}, "freq": 3600,
   "signals": [
@@ -369,7 +370,7 @@
 { "hdr": "743", "rax": "763", "din": "C0", "dbg": true, "cmd": {"22": "2006"}, "freq": 5,
   "signals": [
     {"id": "DACIA_BAT_V",         "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "Battery voltage",      "suggestedMetric": "starterBatteryVoltage"},
-    {"id": "DACIA_BAT_V_12_V_V3", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "BATTERY VOLTAGE 12 v"}
+    {"id": "DACIA_BAT_V_12_V_V2", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "BATTERY VOLTAGE 12 v"}
   ]},
 { "hdr": "743", "rax": "763", "dbg": true, "cmd": {"22": "2008"}, "freq": 1,
   "signals": [
@@ -454,8 +455,8 @@
   ]},
 { "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "43A4"}, "freq": 5,
   "signals": [
-    {"id": "DACIA_HEAT_T_RAW", "path": "Climate", "fmt": { "len": 8,  "max": 255,                                         "unit": "scalar"  }, "name": "Heating temperature, raw"},
-    {"id": "DACIA_HEAT_T",     "path": "Climate", "fmt": { "len": 16, "max": 215.996, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Heating temperature"}
+    {"id": "DACIA_HEAT_T",     "path": "Climate", "fmt": { "len": 16, "max": 215.996, "min": -40, "div": 256, "add": -40, "unit": "celsius" }, "name": "Heating temperature"},
+    {"id": "DACIA_HEAT_T_RAW", "path": "Climate", "fmt": { "len": 8,  "max": 255,                                         "unit": "scalar"  }, "name": "Heating temperature, raw"}
   ]},
 { "hdr": "744", "rax": "764", "dbg": true, "cmd": {"22": "43A5"}, "freq": 5,
   "signals": [
@@ -1071,7 +1072,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "din": "C0", "dbg": true, "cmd": {"21": "A0"}, "freq": 5,
   "signals": [
-    {"id": "DACIA_BAT_V_12_V_V2",          "path": "Battery",  "fmt": {            "len": 8,  "max": 16.16,                "mul": 4,   "div": 125,    "add": 8,                     "unit": "volts"             }, "name": "Battery voltage, 12 V"},
+    {"id": "DACIA_BAT_V_12_V_V3",          "path": "Battery",  "fmt": {            "len": 8,  "max": 16.16,                "mul": 4,   "div": 125,    "add": 8,                     "unit": "volts"             }, "name": "Battery voltage, 12 V"},
     {"id": "DACIA_AIR_T",                  "path": "Engine",   "fmt": {"bix": 16,  "len": 8,  "max": 119,   "min": -40,    "mul": 5,   "div": 8,      "add": -40,                   "unit": "celsius"           }, "name": "Air temperature"},
     {"id": "DACIA_MANIFOLD_P_7E0",         "path": "Engine",   "fmt": {"bix": 24,  "len": 16, "max": 389,                  "mul": 37,  "div": 6400,   "add": 10.3,                  "unit": "kilopascal"        }, "name": "Manifold pressure"},
     {"id": "DACIA_ATMOSPHERIC_P_V2",       "path": "Engine",   "fmt": {"bix": 40,  "len": 8,  "max": 1047,                 "mul": -37, "div": 10,     "add": 1047,                  "unit": "unknown"           }, "name": "Atmospheric pressure"},
@@ -2763,7 +2764,7 @@
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2927"}, "freq": 1,
   "signals": [
-    {"id": "DACIA_MOTOR_DRIVEN_FAN", "path": "Engine", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Motor-driven fan unit request"}
+    {"id": "DACIA_MOTOR_DRIVEN_FAN_V2", "path": "Engine", "fmt": { "len": 8, "max": 100, "mul": 20, "div": 51, "unit": "percent" }, "name": "Motor-driven fan unit request"}
   ]},
 { "hdr": "7E0", "rax": "7E8", "dbg": true, "cmd": {"22": "2933"}, "freq": 1,
   "signals": [
@@ -3541,7 +3542,7 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "00B4"}, "freq": 30,
   "signals": [
-    {"id": "DACIA_ABS_TIME_SINCE_FIRST_V2", "path": "Engine", "fmt": { "len": 32, "max": 2147483647, "min": -2147483648, "sign": true, "unit": "scalar" }, "name": "Absolute time since first ignition"}
+    {"id": "DACIA_ABS_TIME_SINCE_FIRST_V3", "path": "Engine", "fmt": { "len": 32, "max": 2147483647, "min": -2147483648, "sign": true, "unit": "scalar" }, "name": "Absolute time since first ignition"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "00B5"}, "freq": 5,
   "signals": [
@@ -4024,7 +4025,7 @@
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "23B4"}, "freq": 30,
   "signals": [
-    {"id": "DACIA_ABS_TIME_SINCE_FIRST", "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "scalar" }, "name": "Absolute time since first ignition"}
+    {"id": "DACIA_ABS_TIME_SINCE_FIRST_V2", "path": "Engine", "fmt": { "len": 32, "max": 4294967295, "unit": "scalar" }, "name": "Absolute time since first ignition"}
   ]},
 { "hdr": "7E1", "rax": "7E9", "dbg": true, "cmd": {"22": "2C05"}, "freq": 1,
   "signals": [
@@ -4545,13 +4546,18 @@
   "signals": [
     {"id": "DACIA_SOC_EVC", "path": "Battery", "fmt": { "len": 16, "max": 1310.7, "div": 50, "unit": "percent" }, "name": "State of charge, vehicle controller"}
   ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2003"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_VSS_V2",   "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"},
+    {"id": "DACIA_VSS_DADA", "path": "Movement", "fmt": { "len": 16, "max": 655,    "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed"}
+  ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2005"}, "freq": 10,
   "signals": [
     {"id": "DACIA_12V_V", "path": "Electrical", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "volts" }, "name": "12V battery voltage", "suggestedMetric": "starterBatteryVoltage"}
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2006"}, "freq": 10,
   "signals": [
-    {"id": "DACIA_ODO_2", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
+    {"id": "DACIA_ODO_EVC", "path": "Trips", "fmt": { "len": 24, "max": 16777215, "unit": "kilometers" }, "name": "Odometer", "suggestedMetric": "odometer"}
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2023"}, "freq": 5,
   "signals": [
@@ -4651,6 +4657,11 @@
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "20FD"}, "freq": 5,
   "signals": [
     {"id": "DACIA_TRACTION_BAT_V_MEAS", "path": "Battery", "fmt": { "len": 16, "max": 6553, "div": 10, "unit": "volts" }, "name": "Traction battery voltage measured by dcdc"}
+  ]},
+{ "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "20FE"}, "freq": 5,
+  "signals": [
+    {"id": "DACIA_HV_V_EVC",       "path": "Battery", "fmt": { "len": 16, "max": 6553.5,                           "div": 10,             "unit": "volts" }, "name": "High voltage battery voltage, vehicle controller"},
+    {"id": "DACIA_DC_BAT_CURRENT", "path": "Battery", "fmt": { "len": 16, "max": 500,    "min": -15883, "mul": -1, "div": 4,  "add": 500, "unit": "amps"  }, "name": "Battery current, DC"}
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2170"}, "freq": 0.25,
   "signals": [
@@ -4928,7 +4939,7 @@
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2B8A"}, "freq": 2,
   "signals": [
-    {"id": "DACIA_AC_V", "path": "Battery", "fmt": { "len": 16, "max": 32767.5, "div": 2, "unit": "volts" }, "name": "Mains voltage, AC"}
+    {"id": "DACIA_AC_V", "path": "Battery", "fmt": { "len": 16, "max": 32767.5, "div": 2, "unit": "volts" }, "name": "AC mains voltage"}
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "2C2C"}, "freq": 1,
   "signals": [
@@ -4948,7 +4959,7 @@
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "300B"}, "freq": 2,
   "signals": [
-    {"id": "DACIA_AC_PHASES", "path": "Battery", "name": "Mains phases, AC", "fmt": {"bix": 4, "len": 4, "map": {
+    {"id": "DACIA_AC_PHASES", "path": "Battery", "name": "AC mains phases", "fmt": {"bix": 4, "len": 4, "map": {
           "0": { "description": "One phase",    "value": "ONE" },
           "1": { "description": "Two phase",    "value": "TWO" },
           "2": { "description": "Three phase",  "value": "THREE" },
@@ -4958,7 +4969,7 @@
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "300D"}, "freq": 2,
   "signals": [
-    {"id": "DACIA_AC_A", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "amps" }, "name": "Mains current, AC"}
+    {"id": "DACIA_AC_A", "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10, "unit": "amps" }, "name": "AC mains current"}
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "300E"}, "freq": 1,
   "signals": [
@@ -4966,7 +4977,7 @@
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "300F"}, "freq": 2,
   "signals": [
-    {"id": "DACIA_AC_P_AVAIL", "path": "Battery", "fmt": { "len": 16, "max": 1638.375, "div": 40, "unit": "kilowatts" }, "name": "Charging power available, AC"}
+    {"id": "DACIA_AC_P_AVAIL", "path": "Battery", "fmt": { "len": 16, "max": 1638.375, "div": 40, "unit": "kilowatts" }, "name": "AC charging power available"}
   ]},
 { "hdr": "DADA", "rax": "DA", "dbg": true, "cmd": {"22": "301A"}, "freq": 1,
   "signals": [
@@ -5132,558 +5143,6 @@
   "signals": [
     {"id": "DACIA_RPM_DADA", "path": "Movement", "fmt": { "len": 16, "max": 16383, "div": 4, "unit": "rpm" }, "name": "Engine speed"}
   ]},
-{ "hdr": "DADA", "rax": "DAF1DA", "fcm1": true, "dbg": true, "cmd": {"22": "2003"}, "freq": 0.25,
-  "signals": [
-    {"id": "DACIA_VSS_DADA", "path": "Movement", "fmt": { "len": 16, "max": 655,    "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed"},
-    {"id": "DACIA_VSS_V2",   "path": "Movement", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "kilometersPerHour" }, "name": "Vehicle speed", "suggestedMetric": "speed"}
-  ]},
-{ "hdr": "DADA", "rax": "DAF1DA", "fcm1": true, "dbg": true, "cmd": {"22": "20FE"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_DC_BAT_CURRENT", "path": "Battery", "fmt": { "len": 16, "max": 500,    "min": -15883, "mul": -1, "div": 4,  "add": 500, "unit": "amps"  }, "name": "Battery current, DC"},
-    {"id": "DACIA_HV_V_EVC",       "path": "Battery", "fmt": { "len": 16, "max": 6553.5,                           "div": 10,             "unit": "volts" }, "name": "High voltage battery voltage, vehicle controller"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DA", "fcm1": true, "dbg": true, "cmd": {"22": "9002"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_DC_BAT_ST_CHG", "path": "Battery", "fmt": { "len": 16, "max": 655, "div": 100, "unit": "percent" }, "name": "Battery state of charge, DC"},
-    {"id": "DACIA_SOC",           "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "unit": "percent" }, "name": "State of charge",             "suggestedMetric": "stateOfCharge"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DA", "fcm1": true, "dbg": true, "cmd": {"22": "9003"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_DC_BAT_ST_HEALTH", "path": "Battery", "fmt": { "len": 16, "max": 655,    "div": 100, "unit": "percent" }, "name": "Battery state of health, DC"},
-    {"id": "DACIA_SOH",              "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "percent" }, "name": "State of health",             "suggestedMetric": "stateOfHealth"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DA", "fcm1": true, "dbg": true, "cmd": {"22": "91C8"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_DC_BAT_CAP", "path": "Battery", "fmt": { "len": 24, "max": 16777,     "div": 1000, "unit": "kilowattHours" }, "name": "Battery capacity, DC"},
-    {"id": "DACIA_HV_E_AVAIL", "path": "Battery", "fmt": { "len": 24, "max": 16777.215, "div": 1000, "unit": "kilowattHours" }, "name": "High voltage battery available energy"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9001"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT_SOC", "path": "Battery", "fmt": { "len": 16, "max": 652,    "min": -3, "div": 100, "add": -3, "unit": "percent" }, "name": "Traction battery SOC"},
-    {"id": "DACIA_SOC_9001",         "path": "Battery", "fmt": { "len": 16, "max": 655.35,            "div": 100,            "unit": "percent" }, "name": "State of charge, battery controller"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9005"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_OPEN_CIRCUIT_V", "path": "Battery", "fmt": { "len": 16, "max": 655,    "div": 100, "unit": "volts" }, "name": "Open circuit voltage"},
-    {"id": "DACIA_HV_V",           "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10,  "unit": "volts" }, "name": "High voltage battery voltage", "suggestedMetric": "tractionBatteryVoltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9006"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_AVG_V_CELLS", "path": "Battery", "fmt": { "len": 32, "max": 30840, "min": -30840, "div": 69632, "sign": true, "unit": "volts" }, "name": "Average voltage of cells"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9007"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_HIGHEST_CELL_V_LEVEL", "path": "Battery", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Highest cell voltage level"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9008"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_CELL_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Cell with the highest voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9009"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_LOWEST_CELL_V_LEVEL", "path": "Battery", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Lowest cell voltage level"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "900A"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_CELL_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Cell with the lowest voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9011"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_COMPUTER_POWER_SUP", "path": "Engine", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Computer power supply"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9012"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT_T", "path": "Battery", "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery compartment temperature"},
-    {"id": "DACIA_HV_T",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "High voltage battery average temperature"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9013"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT_MIN_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery min. temperature"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9014"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT_MAX_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery max temperature"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9021"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_1", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 1"},
-    {"id": "DACIA_CELL_V1",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 1 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9022"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_2", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 2"},
-    {"id": "DACIA_CELL_V2",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 2 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9023"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_3", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 3"},
-    {"id": "DACIA_CELL_V3",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 3 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9024"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_4", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 4"},
-    {"id": "DACIA_CELL_V4",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 4 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9025"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_5", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 5"},
-    {"id": "DACIA_CELL_V5",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 5 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9026"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_6", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 6"},
-    {"id": "DACIA_CELL_V6",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 6 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9027"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_7", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 7"},
-    {"id": "DACIA_CELL_V7",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 7 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9028"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_8", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 8"},
-    {"id": "DACIA_CELL_V8",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 8 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9029"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_9", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 9"},
-    {"id": "DACIA_CELL_V9",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 9 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "902A"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_10", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 10"},
-    {"id": "DACIA_CELL_V10",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 10 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "902B"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_11", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 11"},
-    {"id": "DACIA_CELL_V11",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 11 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "902C"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_12", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 12"},
-    {"id": "DACIA_CELL_V12",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 12 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "902D"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_13", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 13"},
-    {"id": "DACIA_CELL_V13",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 13 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "902E"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_14", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 14"},
-    {"id": "DACIA_CELL_V14",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 14 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "902F"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_15", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 15"},
-    {"id": "DACIA_CELL_V15",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 15 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9030"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_16", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 16"},
-    {"id": "DACIA_CELL_V16",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 16 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9031"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_17", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 17"},
-    {"id": "DACIA_CELL_V17",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 17 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9032"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_18", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 18"},
-    {"id": "DACIA_CELL_V18",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 18 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9033"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_19", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 19"},
-    {"id": "DACIA_CELL_V19",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 19 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9034"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_20", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 20"},
-    {"id": "DACIA_CELL_V20",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 20 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9035"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_21", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 21"},
-    {"id": "DACIA_CELL_V21",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 21 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9036"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_22", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 22"},
-    {"id": "DACIA_CELL_V22",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 22 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9037"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_23", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 23"},
-    {"id": "DACIA_CELL_V23",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 23 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9038"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_24", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 24"},
-    {"id": "DACIA_CELL_V24",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 24 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9039"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_25", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 25"},
-    {"id": "DACIA_CELL_V25",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 25 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "903A"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_26", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 26"},
-    {"id": "DACIA_CELL_V26",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 26 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "903B"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_27", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 27"},
-    {"id": "DACIA_CELL_V27",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 27 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "903C"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_28", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 28"},
-    {"id": "DACIA_CELL_V28",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 28 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "903D"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_29", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 29"},
-    {"id": "DACIA_CELL_V29",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 29 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "903E"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_30", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 30"},
-    {"id": "DACIA_CELL_V30",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 30 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "903F"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_31", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 31"},
-    {"id": "DACIA_CELL_V31",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 31 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9041"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_32", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 32"},
-    {"id": "DACIA_CELL_V32",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 32 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9042"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_33", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 33"},
-    {"id": "DACIA_CELL_V33",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 33 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9043"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_34", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 34"},
-    {"id": "DACIA_CELL_V34",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 34 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9044"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_35", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 35"},
-    {"id": "DACIA_CELL_V35",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 35 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9045"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_36", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 36"},
-    {"id": "DACIA_CELL_V36",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 36 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9046"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_37", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 37"},
-    {"id": "DACIA_CELL_V37",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 37 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9047"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_38", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 38"},
-    {"id": "DACIA_CELL_V38",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 38 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9048"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_39", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 39"},
-    {"id": "DACIA_CELL_V39",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 39 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9049"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_40", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 40"},
-    {"id": "DACIA_CELL_V40",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 40 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "904A"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_41", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 41"},
-    {"id": "DACIA_CELL_V41",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 41 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "904B"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_42", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 42"},
-    {"id": "DACIA_CELL_V42",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 42 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "904C"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_43", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 43"},
-    {"id": "DACIA_CELL_V43",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 43 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "904D"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_44", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 44"},
-    {"id": "DACIA_CELL_V44",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 44 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "904E"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_45", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 45"},
-    {"id": "DACIA_CELL_V45",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 45 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "904F"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_46", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 46"},
-    {"id": "DACIA_CELL_V46",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 46 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9050"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_47", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 47"},
-    {"id": "DACIA_CELL_V47",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 47 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9051"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_48", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 48"},
-    {"id": "DACIA_CELL_V48",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 48 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9052"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_49", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 49"},
-    {"id": "DACIA_CELL_V49",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 49 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9053"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_50", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 50"},
-    {"id": "DACIA_CELL_V50",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 50 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9054"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_51", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 51"},
-    {"id": "DACIA_CELL_V51",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 51 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9055"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_52", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 52"},
-    {"id": "DACIA_CELL_V52",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 52 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9056"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_53", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 53"},
-    {"id": "DACIA_CELL_V53",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 53 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9057"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_54", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 54"},
-    {"id": "DACIA_CELL_V54",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 54 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9058"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_55", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 55"},
-    {"id": "DACIA_CELL_V55",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 55 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9059"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_56", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 56"},
-    {"id": "DACIA_CELL_V56",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 56 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "905A"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_57", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 57"},
-    {"id": "DACIA_CELL_V57",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 57 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "905B"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_58", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 58"},
-    {"id": "DACIA_CELL_V58",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 58 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "905C"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_59", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 59"},
-    {"id": "DACIA_CELL_V59",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 59 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "905D"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_60", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 60"},
-    {"id": "DACIA_CELL_V60",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 60 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "905E"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_61", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 61"},
-    {"id": "DACIA_CELL_V61",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 61 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "905F"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_62", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 62"},
-    {"id": "DACIA_CELL_V62",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 62 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9061"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_63", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 63"},
-    {"id": "DACIA_CELL_V63",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 63 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9062"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_64", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 64"},
-    {"id": "DACIA_CELL_V64",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 64 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9063"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_65", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 65"},
-    {"id": "DACIA_CELL_V65",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 65 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9064"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_66", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 66"},
-    {"id": "DACIA_CELL_V66",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 66 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9065"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_67", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 67"},
-    {"id": "DACIA_CELL_V67",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 67 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9066"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_68", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 68"},
-    {"id": "DACIA_CELL_V68",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 68 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9067"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_69", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 69"},
-    {"id": "DACIA_CELL_V69",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 69 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9068"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_70", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 70"},
-    {"id": "DACIA_CELL_V70",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 70 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9069"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_71", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 71"},
-    {"id": "DACIA_CELL_V71",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 71 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "906A"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_72", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 72"},
-    {"id": "DACIA_CELL_V72",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 72 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "906B"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_73", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 73"},
-    {"id": "DACIA_CELL_V73",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 73 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "906C"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_74", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 74"},
-    {"id": "DACIA_CELL_V74",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 74 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "906D"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_75", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 75"},
-    {"id": "DACIA_CELL_V75",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 75 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "906E"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_76", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 76"},
-    {"id": "DACIA_CELL_V76",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 76 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "906F"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_77", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 77"},
-    {"id": "DACIA_CELL_V77",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 77 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9070"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_78", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 78"},
-    {"id": "DACIA_CELL_V78",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 78 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9071"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_79", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 79"},
-    {"id": "DACIA_CELL_V79",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 79 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9072"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_80", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 80"},
-    {"id": "DACIA_CELL_V80",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 80 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9073"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_81", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 81"},
-    {"id": "DACIA_CELL_V81",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 81 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9074"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_82", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 82"},
-    {"id": "DACIA_CELL_V82",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 82 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9075"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_83", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 83"},
-    {"id": "DACIA_CELL_V83",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 83 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9076"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_84", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 84"},
-    {"id": "DACIA_CELL_V84",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 84 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9077"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_85", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 85"},
-    {"id": "DACIA_CELL_V85",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 85 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9078"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_86", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 86"},
-    {"id": "DACIA_CELL_V86",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 86 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9079"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_87", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 87"},
-    {"id": "DACIA_CELL_V87",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 87 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "907A"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_88", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 88"},
-    {"id": "DACIA_CELL_V88",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 88 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "907B"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_89", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 89"},
-    {"id": "DACIA_CELL_V89",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 89 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "907C"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_90", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 90"},
-    {"id": "DACIA_CELL_V90",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 90 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "907D"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_91", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 91"},
-    {"id": "DACIA_CELL_V91",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 91 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "907E"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_92", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 92"},
-    {"id": "DACIA_CELL_V92",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 92 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "907F"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_93", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 93"},
-    {"id": "DACIA_CELL_V93",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 93 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9081"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_94", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 94"},
-    {"id": "DACIA_CELL_V94",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 94 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9082"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_95", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 95"},
-    {"id": "DACIA_CELL_V95",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 95 voltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9083"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BAT_CELL_V_NO_96", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 96"},
-    {"id": "DACIA_CELL_V96",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 96 voltage"}
-  ]},
 { "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9129"}, "freq": 1,
   "signals": [
     {"id": "DACIA_SECONDARY_BMS_NO_12", "path": "Engine", "fmt": {"bix": 20, "len": 1, "max": 1, "unit": "scalar" }, "name": "Secondary battery management system no. 12"},
@@ -5698,10 +5157,6 @@
     {"id": "DACIA_SECONDARY_BMS_NO_3",  "path": "Engine", "fmt": {"bix": 29, "len": 1, "max": 1, "unit": "scalar" }, "name": "Secondary battery management system no. 3"},
     {"id": "DACIA_SECONDARY_BMS_NO_2",  "path": "Engine", "fmt": {"bix": 30, "len": 1, "max": 1, "unit": "scalar" }, "name": "Secondary battery management system no. 2"},
     {"id": "DACIA_SECONDARY_BMS_NO_1",  "path": "Engine", "fmt": {"bix": 31, "len": 1, "max": 1, "unit": "scalar" }, "name": "Secondary battery management system no. 1"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "912E"}, "freq": 0.25,
-  "signals": [
-    {"id": "DACIA_FAN_SPD_DADB", "path": "Movement", "fmt": { "len": 8, "max": 8160, "mul": 32, "unit": "rpm" }, "name": "Fan speed"}
   ]},
 { "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "912F"}, "freq": 5,
   "signals": [
@@ -5718,70 +5173,6 @@
     {"id": "DACIA_T_SENS_MODULE_N_2",  "path": "Engine", "fmt": {"bix": 30, "len": 1, "max": 1, "unit": "scalar" }, "name": "Temperature sensor module number 2"},
     {"id": "DACIA_T_SENS_MODULE_N_1",  "path": "Engine", "fmt": {"bix": 31, "len": 1, "max": 1, "unit": "scalar" }, "name": "Temperature sensor module number 1"}
   ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9131"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_1", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 1"},
-    {"id": "DACIA_PACK_T1",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 1"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9132"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_2", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 2"},
-    {"id": "DACIA_PACK_T2",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 2"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9133"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_3", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 3"},
-    {"id": "DACIA_PACK_T3",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 3"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9134"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_4", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 4"},
-    {"id": "DACIA_PACK_T4",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 4"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9135"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_5", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 5"},
-    {"id": "DACIA_PACK_T5",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 5"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9136"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_6", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 6"},
-    {"id": "DACIA_PACK_T6",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 6"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9137"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_7", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 7"},
-    {"id": "DACIA_PACK_T7",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 7"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9138"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_8", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 8"},
-    {"id": "DACIA_PACK_T8",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 8"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9139"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_9", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 9"},
-    {"id": "DACIA_PACK_T9",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 9"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "913A"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_10", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 10"},
-    {"id": "DACIA_PACK_T10",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 10"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "913B"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_11", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 11"},
-    {"id": "DACIA_PACK_T11",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 11"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "913C"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_T_NUMBER_12", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 12"},
-    {"id": "DACIA_PACK_T12",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 12"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "91C9"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_MOTOR_DRIVEN_FAN_UNIT_REQ", "path": "Engine", "fmt": { "len": 8, "max": 127, "div": 2, "unit": "percent" }, "name": "Motor-driven fan unit request"}
-  ]},
 { "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "91CC"}, "freq": 1,
   "signals": [
     {"id": "DACIA_BUSBAR_NO_12", "path": "Engine", "fmt": {"bix": 20, "len": 1, "max": 1, "unit": "scalar" }, "name": "Bus bar no. 12"},
@@ -5796,78 +5187,6 @@
     {"id": "DACIA_BUSBAR_NO_3",  "path": "Engine", "fmt": {"bix": 29, "len": 1, "max": 1, "unit": "scalar" }, "name": "Bus bar no. 3"},
     {"id": "DACIA_BUSBAR_NO_2",  "path": "Engine", "fmt": {"bix": 30, "len": 1, "max": 1, "unit": "scalar" }, "name": "Bus bar no. 2"},
     {"id": "DACIA_BUSBAR_NO_1",  "path": "Engine", "fmt": {"bix": 31, "len": 1, "max": 1, "unit": "scalar" }, "name": "Bus bar no. 1"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "91CD"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT_INPUT_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery input water temperature"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "91CF"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT_TOT", "path": "Battery", "fmt": { "len": 32, "max": 134217727, "div": 32, "add": 67108864, "sign": true, "unit": "kilometers" }, "name": "Traction battery total mileage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "91EF"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_FAN_UNIT", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Fan unit"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F0"}, "freq": 0.25,
-  "signals": [
-    {"id": "DACIA_FAN_SPD_DADB_2", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Fan speed"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F6"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT_SERVICE", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Traction battery service plug interlock"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F7"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT_INTERLOCK", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Traction battery interlock"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9216"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_TRACTION_BAT",             "path": "Battery", "fmt": {          "len": 1, "max": 1, "unit": "scalar" }, "name": "Traction battery overheating"},
-    {"id": "DACIA_CELLS_OVERVOLAGE",         "path": "Engine",  "fmt": {"bix": 1, "len": 1, "max": 1, "unit": "scalar" }, "name": "Cells overvoltage"},
-    {"id": "DACIA_TRACTION_BAT_OVERCURRENT", "path": "Battery", "fmt": {"bix": 2, "len": 1, "max": 1, "unit": "scalar" }, "name": "Traction battery overcurrent"},
-    {"id": "DACIA_CELLS_UNDERVOLTAGE",       "path": "Battery", "fmt": {"bix": 3, "len": 1, "max": 1, "unit": "scalar" }, "name": "Cells undervoltage"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9221"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BUSBAR_V_NO_1", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Bus bar voltage no. 1"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9222"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BUSBAR_V_NO_2", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Bus bar voltage no. 2"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9223"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BUSBAR_V_NO_3", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Bus bar voltage no. 3"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9224"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BUSBAR_V_NO_4", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Bus bar voltage no. 4"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9225"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BUSBAR_V_NO_5", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Bus bar voltage no. 5"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9226"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BUSBAR_V_NO_6", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Bus bar voltage no. 6"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9227"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BUSBAR_V_NO_7", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Bus bar voltage no. 7"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9228"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_BUSBAR_V_NO_8", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Bus bar voltage no. 8"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9242"}, "freq": 5,
-  "signals": [
-    {"id": "DACIA_MODULE_MIN_T", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Module with, minimum temperature"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9245"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_CUM_ENERGY", "path": "Engine",  "fmt": { "len": 32, "max": 2147483,            "min": -2147483, "div": 1000, "sign": true, "unit": "kilowattHours" }, "name": "Cumulative energy when discharging"},
-    {"id": "DACIA_E_DISCHG",   "path": "Battery", "fmt": { "len": 32, "max": 4294967.2949999999,                  "div": 1000,               "unit": "kilowattHours" }, "name": "Energy discharged, total"}
   ]},
 { "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9256"}, "freq": 1,
   "signals": [
@@ -5969,15 +5288,7 @@
   ]},
 { "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9257"}, "freq": 1,
   "signals": [
-    {"id": "DACIA_TRACTION_BAT_CURRENT", "path": "Battery", "fmt": { "len": 16, "max": 1027, "min": -1020, "div": 32, "add": -1020, "unit": "amps" }, "name": "Traction battery, current"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "925A"}, "freq": 1,
-  "signals": [
-    {"id": "DACIA_FAN_UNIT_FEED", "path": "Engine", "fmt": { "len": 8, "max": 1020, "mul": 4, "unit": "hertz" }, "name": "Fan unit feed"}
-  ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9261"}, "freq": 30,
-  "signals": [
-    {"id": "DACIA_ABS_TIME_SINCE_FIRST_IGN", "path": "Engine", "fmt": { "len": 24, "max": 16777215, "unit": "minutes" }, "name": "Absolute time since first ignition"}
+    {"id": "DACIA_TRACTION_BAT_CURRENT_V2", "path": "Battery", "fmt": { "len": 16, "max": 1027, "min": -1020, "div": 32, "add": -1020, "unit": "amps" }, "name": "Traction battery, current"}
   ]},
 { "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "927A"}, "freq": 1,
   "signals": [
@@ -6078,34 +5389,724 @@
     {"id": "DACIA_SOH_CELL_2",  "path": "Engine", "fmt": {"bix": 254, "len": 1, "max": 1, "unit": "scalar" }, "name": "State of health cell 2"},
     {"id": "DACIA_SOH_CELL_1",  "path": "Engine", "fmt": {"bix": 255, "len": 1, "max": 1, "unit": "scalar" }, "name": "State of health cell 1"}
   ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "9284"}, "freq": 1,
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9001"}, "freq": 10,
   "signals": [
-    {"id": "DACIA_TRACTION_BAT_CURRENT_DADB", "path": "Battery", "fmt": { "len": 32, "max": 2147483, "min": -2147483,            "div": 1000, "sign": true, "unit": "amps" }, "name": "Traction battery, current"},
-    {"id": "DACIA_TRACTION_BAT_CURRENT_V2",   "path": "Battery", "fmt": { "len": 32, "max": 2147483, "min": -2147483, "mul": -1, "div": 1000, "sign": true, "unit": "amps" }, "name": "Traction battery, current"}
+    {"id": "DACIA_SOC_9001",         "path": "Battery", "fmt": { "len": 16, "max": 655.35,            "div": 100,            "unit": "percent" }, "name": "State of charge, battery controller"},
+    {"id": "DACIA_TRACTION_BAT_SOC", "path": "Battery", "fmt": { "len": 16, "max": 652,    "min": -3, "div": 100, "add": -3, "unit": "percent" }, "name": "Traction battery SOC"}
   ]},
-{ "hdr": "DADB", "rax": "DAF1DB", "fcm1": true, "dbg": true, "cmd": {"22": "F1A0"}, "freq": 1,
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9002"}, "freq": 10,
   "signals": [
-    {"id": "DACIA_FAULT_FINDING_VERSION_DADB", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Fault finding version"}
+    {"id": "DACIA_SOC",           "path": "Battery", "fmt": { "len": 16, "max": 100, "div": 100, "unit": "percent" }, "name": "State of charge",             "suggestedMetric": "stateOfCharge"},
+    {"id": "DACIA_DC_BAT_ST_CHG", "path": "Battery", "fmt": { "len": 16, "max": 655, "div": 100, "unit": "percent" }, "name": "Battery state of charge, DC"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9003"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_SOH",              "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "percent" }, "name": "State of health",             "suggestedMetric": "stateOfHealth"},
+    {"id": "DACIA_DC_BAT_ST_HEALTH", "path": "Battery", "fmt": { "len": 16, "max": 655,    "div": 100, "unit": "percent" }, "name": "Battery state of health, DC"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9005"}, "freq": 2,
+  "signals": [
+    {"id": "DACIA_HV_V",           "path": "Battery", "fmt": { "len": 16, "max": 6553.5, "div": 10,  "unit": "volts" }, "name": "High voltage battery voltage", "suggestedMetric": "tractionBatteryVoltage"},
+    {"id": "DACIA_OPEN_CIRCUIT_V", "path": "Battery", "fmt": { "len": 16, "max": 655,    "div": 100, "unit": "volts" }, "name": "Open circuit voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9006"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_AVG_V_CELLS", "path": "Battery", "fmt": { "len": 32, "max": 30840, "min": -30840, "div": 69632, "sign": true, "unit": "volts" }, "name": "Average voltage of cells"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9007"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_HIGHEST_CELL_V_LEVEL", "path": "Battery", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Highest cell voltage level"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9008"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_CELL_HIGHEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Cell with the highest voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9009"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_LOWEST_CELL_V_LEVEL", "path": "Battery", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Lowest cell voltage level"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "900A"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_CELL_LOWEST_V", "path": "Battery", "fmt": { "len": 8, "max": 256, "add": 1, "unit": "scalar" }, "name": "Cell with the lowest voltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9011"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_COMPUTER_POWER_SUP", "path": "Engine", "fmt": { "len": 16, "max": 63.99, "mul": 0.000976563, "unit": "volts" }, "name": "Computer power supply"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9012"}, "freq": 10,
+  "signals": [
+    {"id": "DACIA_HV_T",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "High voltage battery average temperature"},
+    {"id": "DACIA_TRACTION_BAT_T", "path": "Battery", "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery compartment temperature"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9013"}, "freq": 5,
+  "signals": [
+    {"id": "DACIA_TRACTION_BAT_MIN_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery min. temperature"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9014"}, "freq": 5,
+  "signals": [
+    {"id": "DACIA_TRACTION_BAT_MAX_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery max temperature"}
   ]},
 { "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9018"}, "freq": 10,
   "signals": [
     {"id": "DACIA_CHG_P_MAX", "path": "Battery", "fmt": { "len": 16, "max": 655.35, "div": 100, "unit": "kilowatts" }, "name": "Maximum charge power"}
   ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9021"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V1",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 1 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_1", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 1"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9022"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V2",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 2 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_2", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 2"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9023"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V3",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 3 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_3", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 3"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9024"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V4",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 4 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_4", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 4"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9025"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V5",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 5 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_5", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 5"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9026"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V6",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 6 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_6", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 6"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9027"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V7",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 7 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_7", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 7"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9028"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V8",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 8 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_8", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 8"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9029"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V9",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 9 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_9", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 9"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902A"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V10",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 10 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_10", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 10"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902B"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V11",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 11 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_11", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 11"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902C"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V12",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 12 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_12", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 12"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902D"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V13",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 13 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_13", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 13"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902E"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V14",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 14 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_14", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 14"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "902F"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V15",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 15 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_15", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 15"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9030"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V16",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 16 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_16", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 16"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9031"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V17",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 17 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_17", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 17"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9032"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V18",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 18 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_18", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 18"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9033"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V19",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 19 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_19", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 19"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9034"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V20",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 20 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_20", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 20"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9035"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V21",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 21 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_21", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 21"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9036"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V22",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 22 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_22", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 22"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9037"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V23",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 23 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_23", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 23"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9038"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V24",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 24 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_24", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 24"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9039"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V25",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 25 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_25", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 25"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903A"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V26",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 26 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_26", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 26"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903B"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V27",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 27 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_27", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 27"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903C"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V28",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 28 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_28", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 28"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903D"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V29",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 29 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_29", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 29"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903E"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V30",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 30 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_30", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 30"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "903F"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V31",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 31 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_31", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 31"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9041"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V32",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 32 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_32", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 32"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9042"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V33",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 33 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_33", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 33"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9043"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V34",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 34 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_34", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 34"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9044"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V35",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 35 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_35", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 35"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9045"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V36",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 36 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_36", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 36"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9046"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V37",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 37 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_37", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 37"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9047"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V38",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 38 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_38", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 38"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9048"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V39",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 39 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_39", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 39"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9049"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V40",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 40 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_40", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 40"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904A"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V41",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 41 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_41", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 41"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904B"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V42",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 42 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_42", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 42"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904C"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V43",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 43 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_43", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 43"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904D"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V44",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 44 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_44", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 44"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904E"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V45",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 45 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_45", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 45"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "904F"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V46",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 46 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_46", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 46"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9050"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V47",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 47 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_47", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 47"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9051"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V48",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 48 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_48", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 48"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9052"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V49",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 49 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_49", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 49"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9053"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V50",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 50 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_50", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 50"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9054"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V51",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 51 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_51", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 51"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9055"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V52",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 52 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_52", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 52"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9056"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V53",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 53 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_53", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 53"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9057"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V54",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 54 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_54", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 54"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9058"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V55",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 55 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_55", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 55"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9059"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V56",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 56 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_56", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 56"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905A"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V57",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 57 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_57", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 57"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905B"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V58",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 58 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_58", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 58"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905C"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V59",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 59 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_59", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 59"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905D"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V60",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 60 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_60", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 60"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905E"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V61",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 61 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_61", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 61"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "905F"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V62",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 62 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_62", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 62"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9061"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V63",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 63 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_63", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 63"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9062"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V64",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 64 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_64", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 64"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9063"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V65",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 65 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_65", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 65"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9064"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V66",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 66 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_66", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 66"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9065"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V67",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 67 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_67", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 67"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9066"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V68",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 68 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_68", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 68"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9067"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V69",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 69 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_69", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 69"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9068"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V70",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 70 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_70", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 70"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9069"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V71",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 71 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_71", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 71"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906A"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V72",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 72 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_72", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 72"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906B"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V73",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 73 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_73", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 73"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906C"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V74",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 74 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_74", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 74"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906D"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V75",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 75 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_75", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 75"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906E"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V76",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 76 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_76", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 76"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "906F"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V77",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 77 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_77", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 77"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9070"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V78",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 78 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_78", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 78"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9071"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V79",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 79 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_79", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 79"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9072"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V80",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 80 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_80", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 80"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9073"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V81",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 81 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_81", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 81"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9074"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V82",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 82 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_82", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 82"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9075"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V83",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 83 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_83", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 83"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9076"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V84",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 84 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_84", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 84"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9077"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V85",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 85 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_85", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 85"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9078"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V86",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 86 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_86", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 86"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9079"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V87",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 87 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_87", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 87"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907A"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V88",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 88 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_88", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 88"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907B"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V89",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 89 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_89", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 89"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907C"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V90",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 90 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_90", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 90"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907D"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V91",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 91 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_91", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 91"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907E"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V92",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 92 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_92", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 92"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "907F"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V93",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 93 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_93", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 93"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9081"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V94",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 94 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_94", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 94"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9082"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V95",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 95 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_95", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 95"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9083"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_CELL_V96",         "path": "Battery.Cells", "fmt": { "len": 16, "max": 63.999,                     "div": 1024, "unit": "volts" }, "name": "Cell 96 voltage"},
+    {"id": "DACIA_BAT_CELL_V_NO_96", "path": "Battery",       "fmt": { "len": 16, "max": 63.99,  "mul": 0.000976563,              "unit": "volts" }, "name": "Battery cell voltage no. 96"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "912E"}, "freq": 0.25,
+  "signals": [
+    {"id": "DACIA_FAN_SPD_V2", "path": "Movement", "fmt": { "len": 8, "max": 8160, "mul": 32, "unit": "rpm" }, "name": "Fan speed"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9131"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T1",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 1"},
+    {"id": "DACIA_MODULE_T_NUMBER_1", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 1"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9132"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T2",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 2"},
+    {"id": "DACIA_MODULE_T_NUMBER_2", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 2"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9133"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T3",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 3"},
+    {"id": "DACIA_MODULE_T_NUMBER_3", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 3"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9134"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T4",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 4"},
+    {"id": "DACIA_MODULE_T_NUMBER_4", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 4"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9135"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T5",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 5"},
+    {"id": "DACIA_MODULE_T_NUMBER_5", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 5"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9136"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T6",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 6"},
+    {"id": "DACIA_MODULE_T_NUMBER_6", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 6"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9137"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T7",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 7"},
+    {"id": "DACIA_MODULE_T_NUMBER_7", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 7"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9138"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T8",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 8"},
+    {"id": "DACIA_MODULE_T_NUMBER_8", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 8"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9139"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T9",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 9"},
+    {"id": "DACIA_MODULE_T_NUMBER_9", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 9"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "913A"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T10",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 10"},
+    {"id": "DACIA_MODULE_T_NUMBER_10", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 10"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "913B"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T11",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 11"},
+    {"id": "DACIA_MODULE_T_NUMBER_11", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 11"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "913C"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_PACK_T12",           "path": "Battery", "fmt": { "len": 16, "max": 4055.9375, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Pack temperature 12"},
+    {"id": "DACIA_MODULE_T_NUMBER_12", "path": "Engine",  "fmt": { "len": 16, "max": 4055,      "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Module temperature number 12"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "91C8"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_HV_E_AVAIL", "path": "Battery", "fmt": { "len": 24, "max": 16777.215, "div": 1000, "unit": "kilowattHours" }, "name": "High voltage battery available energy"},
+    {"id": "DACIA_DC_BAT_CAP", "path": "Battery", "fmt": { "len": 24, "max": 16777,     "div": 1000, "unit": "kilowattHours" }, "name": "Battery capacity, DC"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91C9"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_MOTOR_DRIVEN_FAN", "path": "Engine", "fmt": { "len": 8, "max": 127, "div": 2, "unit": "percent" }, "name": "Motor-driven fan unit request"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91CD"}, "freq": 5,
+  "signals": [
+    {"id": "DACIA_TRACTION_BAT_INPUT_T", "path": "Battery", "fmt": { "len": 16, "max": 4055, "min": -40, "div": 16, "add": -40, "unit": "celsius" }, "name": "Traction battery input water temperature"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91CF"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_TRACTION_BAT_TOT", "path": "Battery", "fmt": { "len": 32, "max": 134217727, "div": 32, "add": 67108864, "sign": true, "unit": "kilometers" }, "name": "Traction battery total mileage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91EF"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_FAN_UNIT", "path": "Engine", "fmt": {"bix": 7, "len": 1, "max": 1, "unit": "offon" }, "name": "Fan unit"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F0"}, "freq": 0.25,
+  "signals": [
+    {"id": "DACIA_FAN_SPD_DADB", "path": "Movement", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Fan speed"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F6"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_TRACTION_BAT_SERVICE", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Traction battery service plug interlock"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "91F7"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_TRACTION_BAT_INTERLOCK", "path": "Battery", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Traction battery interlock"}
+  ]},
 { "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9210"}, "freq": 60,
   "signals": [
     {"id": "DACIA_CYCLES", "path": "Battery", "fmt": { "len": 16, "max": 65535, "unit": "scalar" }, "name": "Complete charge cycles"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9216"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_TRACTION_BAT",             "path": "Battery", "fmt": {          "len": 1, "max": 1, "unit": "scalar" }, "name": "Traction battery overheating"},
+    {"id": "DACIA_CELLS_OVERVOLTAGE",        "path": "Battery", "fmt": {"bix": 1, "len": 1, "max": 1, "unit": "scalar" }, "name": "Cell overvoltage"},
+    {"id": "DACIA_TRACTION_BAT_OVERCURRENT", "path": "Battery", "fmt": {"bix": 2, "len": 1, "max": 1, "unit": "scalar" }, "name": "Traction battery overcurrent"},
+    {"id": "DACIA_CELLS_UNDERVOLTAGE",       "path": "Battery", "fmt": {"bix": 3, "len": 1, "max": 1, "unit": "scalar" }, "name": "Cells undervoltage"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9221"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_BUSBAR_V_NO_1", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 1"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9222"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_BUSBAR_V_NO_2", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 2"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9223"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_BUSBAR_V_NO_3", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 3"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9224"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_BUSBAR_V_NO_4", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 4"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9225"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_BUSBAR_V_NO_5", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 5"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9226"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_BUSBAR_V_NO_6", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 6"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9227"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_BUSBAR_V_NO_7", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 7"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9228"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_BUSBAR_V_NO_8", "path": "Battery", "fmt": { "len": 16, "max": 31.99, "min": -32, "mul": 0.000976563, "sign": true, "unit": "volts" }, "name": "Busbar voltage no. 8"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9242"}, "freq": 5,
+  "signals": [
+    {"id": "DACIA_MODULE_MIN_T", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Module with, minimum temperature"}
   ]},
 { "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9243"}, "freq": 60,
   "signals": [
     {"id": "DACIA_E_CHG", "path": "Battery", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "kilowattHours" }, "name": "Energy charged, total"}
   ]},
+{ "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9245"}, "freq": 60,
+  "signals": [
+    {"id": "DACIA_E_DISCHG",   "path": "Battery", "fmt": { "len": 32, "max": 4294967.2949999999,                  "div": 1000,               "unit": "kilowattHours" }, "name": "Energy discharged, total"},
+    {"id": "DACIA_CUM_ENERGY", "path": "Engine",  "fmt": { "len": 32, "max": 2147483,            "min": -2147483, "div": 1000, "sign": true, "unit": "kilowattHours" }, "name": "Cumulative energy when discharging"}
+  ]},
 { "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "9247"}, "freq": 60,
   "signals": [
     {"id": "DACIA_E_REGEN", "path": "Battery", "fmt": { "len": 32, "max": 4294967.2949999999, "div": 1000, "unit": "kilowattHours" }, "name": "Energy regenerated, total"}
   ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "925A"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_FAN_UNIT_FEED", "path": "Engine", "fmt": { "len": 8, "max": 1020, "mul": 4, "unit": "hertz" }, "name": "Fan unit feed"}
+  ]},
 { "hdr": "DADB", "rax": "DB", "dbg": true, "cmd": {"22": "925D"}, "freq": 2,
   "signals": [
     {"id": "DACIA_HV_A", "path": "Battery", "fmt": { "len": 16, "max": 1020, "min": -1027.97, "mul": -1, "div": 32, "add": 1020, "unit": "amps" }, "name": "High voltage battery current", "suggestedMetric": "tractionBatteryCurrent"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9261"}, "freq": 30,
+  "signals": [
+    {"id": "DACIA_ABS_TIME_SINCE_FIRST", "path": "Engine", "fmt": { "len": 24, "max": 16777215, "unit": "minutes" }, "name": "Absolute time since first ignition"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "9284"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_TRACTION_BAT_CURRENT",      "path": "Battery", "fmt": { "len": 32, "max": 2147483, "min": -2147483, "mul": -1, "div": 1000, "sign": true, "unit": "amps" }, "name": "Traction battery, current"},
+    {"id": "DACIA_TRACTION_BAT_CURRENT_DADB", "path": "Battery", "fmt": { "len": 32, "max": 2147483, "min": -2147483,            "div": 1000, "sign": true, "unit": "amps" }, "name": "Traction battery, current"}
+  ]},
+{ "hdr": "DADB", "rax": "DB", "fcm1": true, "dbg": true, "cmd": {"22": "F1A0"}, "freq": 1,
+  "signals": [
+    {"id": "DACIA_FAULT_FINDING_V2", "path": "Engine", "fmt": { "len": 8, "max": 255, "unit": "scalar" }, "name": "Fault finding version"}
   ]},
 { "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "2004"}, "freq": 5,
   "signals": [
@@ -6121,17 +6122,17 @@
   ]},
 { "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7007"}, "freq": 5,
   "signals": [
-    {"id": "DACIA_STATOR_A_U",     "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687,  "min": -500,        "div": 32, "add": -500,               "unit": "amps"   }, "name": "Stator current, phase u"},
+    {"id": "DACIA_STATOR_A_U",     "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687,  "min": -500,        "div": 32, "add": -500,               "unit": "amps"   }, "name": "Stator current, phase U"},
     {"id": "DACIA_STATOR_A_U_RAW", "path": "Drivetrain", "fmt": { "len": 32, "max": 2147483647, "min": -2147483648,                         "sign": true, "unit": "scalar" }, "name": "Stator current, phase U, raw"}
   ]},
 { "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7008"}, "freq": 5,
   "signals": [
-    {"id": "DACIA_STATOR_A_V",     "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687,  "min": -500,        "div": 32, "add": -500,               "unit": "amps"   }, "name": "Stator current, phase v"},
+    {"id": "DACIA_STATOR_A_V",     "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687,  "min": -500,        "div": 32, "add": -500,               "unit": "amps"   }, "name": "Stator current, phase V"},
     {"id": "DACIA_STATOR_A_V_RAW", "path": "Drivetrain", "fmt": { "len": 32, "max": 2147483647, "min": -2147483648,                         "sign": true, "unit": "scalar" }, "name": "Stator current, phase V, raw"}
   ]},
 { "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "7009"}, "freq": 5,
   "signals": [
-    {"id": "DACIA_STATOR_A_W",     "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687,  "min": -500,        "div": 32, "add": -500,               "unit": "amps"   }, "name": "Stator current, phase w"},
+    {"id": "DACIA_STATOR_A_W",     "path": "Drivetrain", "fmt": { "len": 16, "max": 1547.9687,  "min": -500,        "div": 32, "add": -500,               "unit": "amps"   }, "name": "Stator current, phase W"},
     {"id": "DACIA_STATOR_A_W_RAW", "path": "Drivetrain", "fmt": { "len": 32, "max": 2147483647, "min": -2147483648,                         "sign": true, "unit": "scalar" }, "name": "Stator current, phase W, raw"}
   ]},
 { "hdr": "DADF", "rax": "DF", "dbg": true, "cmd": {"22": "700C"}, "freq": 10,
